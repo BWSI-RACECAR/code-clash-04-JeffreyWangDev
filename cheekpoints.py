@@ -36,10 +36,11 @@ class Solution:
             
             #TODO: Write code below to returnn an int with the solution to the prompt.
             max = 0
-            for i in checkpoints:
-                for j in checkpoints:
-                    if max < abs(i-j):
-                        max = abs(i-j)
+            index = 1
+            for i in checkpoints[:-1]:
+                if abs(i - checkpoints[index]) > max:
+                    max = abs(i - checkpoints[index])
+                index += 1
             return max
 
 def main():
